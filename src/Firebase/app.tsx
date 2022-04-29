@@ -35,21 +35,3 @@ export async function getOrders(dbx: any) {
   );
   return currentWeekList;
 }
-
-export async function getOrdersTest(dbx: any) {
-  const currentWeekCol = collection(dbx, "ordersTest");
-  const currentWeekSnapshot = await getDocs(currentWeekCol);
-  const currentWeekList = await currentWeekSnapshot.docs.map((doc) =>
-    doc.data()
-  );
-  return currentWeekList;
-}
-
-export async function getOrdersFrom(dbx: any, day: string) {
-  const currentWeekCol = collection(dbx, day);
-  const currentWeekSnapshot = await getDocs(currentWeekCol);
-  const currentWeekList = await currentWeekSnapshot.docs.map((doc) =>
-    doc.data()
-  );
-  return currentWeekList;
-}
